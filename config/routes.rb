@@ -1,4 +1,8 @@
 Peeps::Application.routes.draw do
-  jsonapi_resources :contacts
-  jsonapi_resources :phone_numbers
+  mount Knock::Engine => "/knock"
+  
+  namespace :api do
+    jsonapi_resources :contacts
+    jsonapi_resources :phone_numbers
+  end
 end
